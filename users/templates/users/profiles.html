@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% for user in users %}
+    <div class="card card-body bg-light">
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.email }}</p>
+        <p>{{ user.location }}</p>
+        <p>{{ user.bio }}</p>
+        <p>{{ user.date_created }}</p>
+        <a href="{{ url_for('users.profile', user_id=user.id) }}" class="btn btn-primary">View Profile</a>
+    </div>
+{% endfor %}
+
+{% endblock content %}
