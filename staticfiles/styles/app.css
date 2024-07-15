@@ -665,7 +665,6 @@ img {
   bottom: 0;
   right: 0;
   background: url(../images/pattern.jpg);
-  pointer-events: none;
 }
 
 .auth > .card {
@@ -854,12 +853,4 @@ img {
 
 .dev__social .zmdi {
   font-size: 2.5rem;
-}
-
-.alert {
-  position: fixed;  
-  left: 50%;  
-  top: 25%;  
-  transform: translate(-50%, -50%);  
-  z-index: 99999;  
 }
