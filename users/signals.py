@@ -21,7 +21,16 @@ def create_user_profile(sender, instance, created, **kwargs):
     profile = Profile(user=user, username=user.username, email=user.email, name=user.first_name)
     profile.save()
 
+@receiver(post_save, sender=Profile)
+def updateUser(sender, instance, created, **kwargs):
+  profile = instance
+  user = profile.user
 
+  if created == False:
+    user.username = profile.username
+    user.email = profile.email
+    user.first_name = profile.name
+    user.save()
 
 
 # post_save.connect(profileUpdated, sender=Profile)
