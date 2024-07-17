@@ -13,4 +13,8 @@ urlpatterns = [
 
     path('', views.profiles, name='profiles'),
     path('user/<str:pk>/', views.UserProfile, name='user-profile'),
+
+    path('inbox/', views.inbox, name='inbox'),
+    path('message/<str:pk>/', views.viewMessage, name='message'),
+    path('send-message/<str:pk>/', views.createMessage, name='send-message'),
 ]
